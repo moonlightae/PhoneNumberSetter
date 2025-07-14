@@ -3,15 +3,6 @@
 import React, {useState} from 'react';
 
 import logo from './img/Logo_SADA.png';
-import Pi from './img/pi.png';
-import Planck from './img/planck.png';
-import Gravity from './img/gravity.png';
-import E from './img/e.png';
-import Light from './img/light.png';
-import Epsilon from './img/permittivity.png'
-import Mu from './img/permeability.png';
-import R from './img/gas.png';
-import N from './img/avogadro.png';
 
 import './App.css';
 
