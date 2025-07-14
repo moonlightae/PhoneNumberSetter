@@ -3,6 +3,15 @@
 import React, {useState} from 'react';
 
 import logo from './img/Logo_SADA.png';
+import Pi from './img/pi.png';
+import Planck from './img/planck.png';
+import Gravity from './img/gravity.png';
+import E from './img/e.png';
+import Light from './img/light.png';
+import Epsilon from './img/permittivity.png'
+import Mu from './img/permeability.png';
+import R from './img/gas.png';
+import N from './img/avogadro.png';
 
 import './App.css';
 
@@ -43,44 +52,44 @@ function App() {
     function log() {
         setnowCalc(9)
     }
-    function zero() {
-        nowNumber = 0
-        calc()
-    }
     function one() {
         nowNumber = 1
         calc()
     }
-    function two() {
-        nowNumber = 2
+    function pi() {
+        nowNumber = 3.1415926535
         calc()
     }
-    function three() {
-        nowNumber = 3
+    function e() {
+        nowNumber = 2.7182818284
         calc()
     }
-    function four() {
-        nowNumber = 4
+    function mu() {
+        nowNumber = 1.2566370612 * (10 ** (-6))
         calc()
     }
-    function five() {
-        nowNumber = 5
+    function epsilon() {
+        nowNumber = 8.8541878188 * (10 ** (-12))
         calc()
     }
-    function six() {
-        nowNumber = 6
+    function light() {
+        nowNumber = 299792458
         calc()
     }
-    function seven() {
-        nowNumber = 7
+    function gravity() {
+        nowNumber = 6.67430 * (10 ** (-11))
         calc()
     }
-    function eight() {
-        nowNumber = 8
+    function planck() {
+        nowNumber = 6.62607015 * (10 ** (-34))
         calc()
     }
-    function nine() {
-        nowNumber = 9
+    function gas() {
+        nowNumber = 8.3144626181
+        calc()
+    }
+    function avo() {
+        nowNumber = 6.02214076 * (10 ** 23)
         calc()
     }
 
@@ -128,14 +137,14 @@ function App() {
             <header className="App-header">
                 <img src={logo} alt={"Logo_SADA"} height='50' style={{marginRight: '3vh'}} />
                 <p>
-                    전화번호 입력하기
+                    전화번호 입력하기 {calcNum} {nowCalc} {nowNumber}
                 </p>
             </header>
 
             <div className="App-body" id={'column-just'}>
                 <div className="calculator">
                     <p className='calc-output'>
-                        {calcNum.toExponential(9).toString()}
+                        {calcNum.toExponential(10).toString()}
                     </p>
                     <div className='calc-body' id={'column-just'}>
                         <div className='calc-shortbutton-line' id={'row-just'}>
@@ -156,14 +165,14 @@ function App() {
                             </button>
                         </div>
                         <div className='calc-button-line' id={'row-just'}>
-                            <button className='calc-button' id={'row-just'} onClick={one}>
-                                1
+                            <button className='calc-button' id={'row-just'} onClick={pi}>
+                                <img src={Pi} alt={"Pi"} height="20"/>
                             </button>
-                            <button className='calc-button' id={'row-just'} onClick={two}>
-                                2
+                            <button className='calc-button' id={'row-just'} onClick={mu}>
+                                <img src={Mu} alt={"permeability"} height="20"/>
                             </button>
-                            <button className='calc-button' id={'row-just'} onClick={three}>
-                                3
+                            <button className='calc-button' id={'row-just'} onClick={epsilon}>
+                                <img src={Epsilon} alt={"permittivity"} height="20"/>
                             </button>
                             <button className='calc-button' id={'row-just'} onClick={plus}>
                                 +
@@ -174,14 +183,14 @@ function App() {
 
                         </div>
                         <div className='calc-button-line' id={'row-just'}>
-                            <button className='calc-button' id={'row-just'} onClick={four}>
-                                4
+                            <button className='calc-button' id={'row-just'} onClick={e}>
+                                <img src={E} alt={"e"} height="20"/>
                             </button>
-                            <button className='calc-button' id={'row-just'} onClick={five}>
-                                5
+                            <button className='calc-button' id={'row-just'} onClick={light}>
+                                <img src={Light} alt={"light"} height="20"/>
                             </button>
-                            <button className='calc-button' id={'row-just'} onClick={six}>
-                                6
+                            <button className='calc-button' id={'row-just'} onClick={gravity}>
+                                <img src={Gravity} alt={"Gravity"} height="20"/>
                             </button>
                             <button className='calc-button' id={'row-just'} onClick={times}>
                                 ×
@@ -193,22 +202,22 @@ function App() {
                         <div className={'calc-45button'} id={'row-just'}>
                             <div className='calc-45button-lines' id={'column-just'}>
                                 <div className='calc-45button-line' id={'row-just'}>
-                                    <button className='calc-button' id={'row-just'} onClick={seven}>
-                                        7
+                                    <button className='calc-button' id={'row-just'} onClick={planck}>
+                                        <img src={Planck} alt={"Planck"} height="20"/>
                                     </button>
-                                    <button className='calc-button' id={'row-just'} onClick={eight}>
-                                        8
+                                    <button className='calc-button' id={'row-just'} onClick={gas}>
+                                        <img src={R} alt={"ideal gas"} height="20"/>
                                     </button>
-                                    <button className='calc-button' id={'row-just'} onClick={nine}>
-                                        9
+                                    <button className='calc-button' id={'row-just'} onClick={avo}>
+                                        <img src={N} alt={"avogadro"} height="20"/>
                                     </button>
                                     <button className='calc-button' id={'row-just'} onClick={power}>
                                         ^
                                     </button>
                                 </div>
                                 <div className='calc-45button-line' id={'row-just'}>
-                                    <button className='calc-rowlongbutton' id={'row-just'} onClick={zero}>
-                                        0
+                                    <button className='calc-rowlongbutton' id={'row-just'} onClick={one}>
+                                        1
                                     </button>
                                     <button className='calc-button' id={'row-just'} style={{fontSize:'12pt'}} onClick={log}>
                                         log
