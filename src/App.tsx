@@ -1,5 +1,3 @@
-// 버튼에 버튼 속성 주고, 계산 기능 구현하기
-
 import React, {useState} from 'react';
 
 import logo from './img/Logo_SADA.png';
