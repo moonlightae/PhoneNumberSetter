@@ -52,44 +52,44 @@ function App() {
     function log() {
         setnowCalc(9)
     }
+    function zero() {
+        nowNumber = 0
+        calc()
+    }
     function one() {
         nowNumber = 1
         calc()
     }
-    function pi() {
-        nowNumber = 3.1415926535
+    function two() {
+        nowNumber = 2
         calc()
     }
-    function e() {
-        nowNumber = 2.7182818284
+    function three() {
+        nowNumber = 3
         calc()
     }
-    function mu() {
-        nowNumber = 1.2566370612 * (10 ** (-6))
+    function four() {
+        nowNumber = 4
         calc()
     }
-    function epsilon() {
-        nowNumber = 8.8541878188 * (10 ** (-12))
+    function five() {
+        nowNumber = 5
         calc()
     }
-    function light() {
-        nowNumber = 299792458
+    function six() {
+        nowNumber = 6
         calc()
     }
-    function gravity() {
-        nowNumber = 6.67430 * (10 ** (-11))
+    function seven() {
+        nowNumber = 7
         calc()
     }
-    function planck() {
-        nowNumber = 6.62607015 * (10 ** (-34))
+    function eight() {
+        nowNumber = 8
         calc()
     }
-    function gas() {
-        nowNumber = 8.3144626181
-        calc()
-    }
-    function avo() {
-        nowNumber = 6.02214076 * (10 ** 23)
+    function nine() {
+        nowNumber = 9
         calc()
     }
 
@@ -137,14 +137,14 @@ function App() {
             <header className="App-header">
                 <img src={logo} alt={"Logo_SADA"} height='50' style={{marginRight: '3vh'}} />
                 <p>
-                    전화번호 입력하기 {calcNum} {nowCalc} {nowNumber}
+                    전화번호 입력하기
                 </p>
             </header>
 
             <div className="App-body" id={'column-just'}>
                 <div className="calculator">
                     <p className='calc-output'>
-                        {calcNum.toExponential(10).toString()}
+                        {calcNum.toExponential(9).toString()}
                     </p>
                     <div className='calc-body' id={'column-just'}>
                         <div className='calc-shortbutton-line' id={'row-just'}>
@@ -165,14 +165,14 @@ function App() {
                             </button>
                         </div>
                         <div className='calc-button-line' id={'row-just'}>
-                            <button className='calc-button' id={'row-just'} onClick={pi}>
-                                <img src={Pi} alt={"Pi"} height="20"/>
+                            <button className='calc-button' id={'row-just'} onClick={one}>
+                                1
                             </button>
-                            <button className='calc-button' id={'row-just'} onClick={mu}>
-                                <img src={Mu} alt={"permeability"} height="20"/>
+                            <button className='calc-button' id={'row-just'} onClick={two}>
+                                2
                             </button>
-                            <button className='calc-button' id={'row-just'} onClick={epsilon}>
-                                <img src={Epsilon} alt={"permittivity"} height="20"/>
+                            <button className='calc-button' id={'row-just'} onClick={three}>
+                                3
                             </button>
                             <button className='calc-button' id={'row-just'} onClick={plus}>
                                 +
@@ -183,14 +183,14 @@ function App() {
 
                         </div>
                         <div className='calc-button-line' id={'row-just'}>
-                            <button className='calc-button' id={'row-just'} onClick={e}>
-                                <img src={E} alt={"e"} height="20"/>
+                            <button className='calc-button' id={'row-just'} onClick={four}>
+                                4
                             </button>
-                            <button className='calc-button' id={'row-just'} onClick={light}>
-                                <img src={Light} alt={"light"} height="20"/>
+                            <button className='calc-button' id={'row-just'} onClick={five}>
+                                5
                             </button>
-                            <button className='calc-button' id={'row-just'} onClick={gravity}>
-                                <img src={Gravity} alt={"Gravity"} height="20"/>
+                            <button className='calc-button' id={'row-just'} onClick={six}>
+                                6
                             </button>
                             <button className='calc-button' id={'row-just'} onClick={times}>
                                 ×
@@ -202,22 +202,22 @@ function App() {
                         <div className={'calc-45button'} id={'row-just'}>
                             <div className='calc-45button-lines' id={'column-just'}>
                                 <div className='calc-45button-line' id={'row-just'}>
-                                    <button className='calc-button' id={'row-just'} onClick={planck}>
-                                        <img src={Planck} alt={"Planck"} height="20"/>
+                                    <button className='calc-button' id={'row-just'} onClick={seven}>
+                                        7
                                     </button>
-                                    <button className='calc-button' id={'row-just'} onClick={gas}>
-                                        <img src={R} alt={"ideal gas"} height="20"/>
+                                    <button className='calc-button' id={'row-just'} onClick={eight}>
+                                        8
                                     </button>
-                                    <button className='calc-button' id={'row-just'} onClick={avo}>
-                                        <img src={N} alt={"avogadro"} height="20"/>
+                                    <button className='calc-button' id={'row-just'} onClick={nine}>
+                                        9
                                     </button>
                                     <button className='calc-button' id={'row-just'} onClick={power}>
                                         ^
                                     </button>
                                 </div>
                                 <div className='calc-45button-line' id={'row-just'}>
-                                    <button className='calc-rowlongbutton' id={'row-just'} onClick={one}>
-                                        1
+                                    <button className='calc-rowlongbutton' id={'row-just'} onClick={zero}>
+                                        0
                                     </button>
                                     <button className='calc-button' id={'row-just'} style={{fontSize:'12pt'}} onClick={log}>
                                         log
@@ -229,6 +229,31 @@ function App() {
                             </button>
                         </div>
                     </div>
+                </div>
+                <div>
+                    {
+                        calcNum >= 0 ?
+                        '0' + (calcNum.toExponential(9).toString()[0]) +
+                        (calcNum.toExponential(9).toString()[2]) +
+                        (calcNum.toExponential(9).toString()[3]) +
+                        (calcNum.toExponential(9).toString()[4]) +
+                        (calcNum.toExponential(9).toString()[5]) +
+                        (calcNum.toExponential(9).toString()[6]) +
+                        (calcNum.toExponential(9).toString()[7]) +
+                        (calcNum.toExponential(9).toString()[8]) +
+                        (calcNum.toExponential(9).toString()[9]) +
+                        (calcNum.toExponential(9).toString()[10]):
+                            '0' + (calcNum.toExponential(9).toString()[1]) +
+                            (calcNum.toExponential(9).toString()[3]) +
+                            (calcNum.toExponential(9).toString()[4]) +
+                            (calcNum.toExponential(9).toString()[5]) +
+                            (calcNum.toExponential(9).toString()[6]) +
+                            (calcNum.toExponential(9).toString()[7]) +
+                            (calcNum.toExponential(9).toString()[8]) +
+                            (calcNum.toExponential(9).toString()[9]) +
+                            (calcNum.toExponential(9).toString()[10]) +
+                            (calcNum.toExponential(9).toString()[11])
+                    }
                 </div>
             </div>
         </div>
